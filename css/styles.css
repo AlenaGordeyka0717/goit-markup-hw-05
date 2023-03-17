@@ -60,7 +60,10 @@ body {
 /* < !-- Шапка сайта header --> */
 
 .page-header {
+
     border-bottom: 1px solid var(--secondary-color);
+
+
 }
 
 .nav {
@@ -71,6 +74,7 @@ body {
 .header-container {
     display: flex;
     align-items: center;
+
 }
 
 .logo {
@@ -117,6 +121,17 @@ body {
     letter-spacing: 0.02em;
     text-decoration: none;
     line-height: 1.5;
+
+    transition-property: backraund-color;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
+    transition: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.site-nav-link:hover,
+.site-nav-link:focus {
+    color: var(--hov-foc-color);
 }
 
 .site-nav-link .current {
@@ -124,6 +139,7 @@ body {
     margin-top: 24px;
 }
 
+/* Подчеркивание */
 .current::after {
     content: "";
     display: block;
@@ -132,15 +148,10 @@ body {
     left: 0;
     width: 100%;
     height: 4px;
+    bottom: -1px;
 
     background-color: var(--primery-bg-logo-color);
     border-radius: 2px;
-
-}
-
-.site-nav-link:hover,
-.site-nav-link:focus {
-    color: var(--hov-foc-color);
 }
 
 .adress-list {
@@ -165,33 +176,12 @@ body {
     line-height: 1.2;
     text-decoration: none;
     letter-spacing: 0.02em;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-list .item+.item {
     margin-left: 40px;
-}
-
-
-/* < !-- Герой hero --> */
-
-.hero-section .overlay {
-    padding-top: 188px;
-    padding-bottom: 188px;
-    text-align: center;
-    background-color: var(--primery-text-color);
-
-    max-width: 1440px;
-    height: 600px;
-    margin-left: auto;
-    margin-right: auto;
-
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
-            rgba(46, 47, 66, 0.7)),
-        url("../images/background-hero/people-office.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
 }
 
 .hero-title {
@@ -211,7 +201,7 @@ body {
     letter-spacing: 0.02em;
 }
 
-.button {
+.hero-button {
     display: inline-block;
     text-align: center;
     border-radius: 4px;
@@ -224,40 +214,89 @@ body {
     background-color: var(--primery-bg-logo-color);
     font-size: 16px;
     letter-spacing: 0.04em;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover,
-.button:focus {
+.hero-button:hover,
+.hero-button:focus {
     color: var(--accent-color);
     background-color: var(--hov-foc-color);
 }
 
-.backdrop {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1440px;
-    height: 600px;
-
-    background: rgba(46, 47, 66, 0.4);
+.pointer {
+    cursor: pointer;
 }
 
-.modal {
+/* Модадьное окно */
+.hero-overlay {
+    position: relative;
+    padding-top: 188px;
+    padding-bottom: 188px;
+    text-align: center;
+    background-color: var(--primery-text-color);
+
+    max-width: 1440px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),
+            rgba(46, 47, 66, 0.7)),
+        url("../images/background-hero/people-office.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-modal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    min-width: 408px;
-    min-height: 516px;
+    width: 408px;
+    height: 516px;
 
     background: #FCFCFC;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
 
-.pointer {
+.hero-modal.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero-button-modal {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    height: 24px;
+    width: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
     cursor: pointer;
+    border-radius: 50%;
+    background-color: #E7E9FC;
+    color: #000;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.hero-button-modal:hover,
+.hero-button-modal:focus {
+    color: #fff;
+    background-color: #404BBF;
+
+}
+
+.hero-svg-button-close {
+    fill: currentColor;
 }
 
 /*< !-- Преимущества      advantages -->*/
@@ -477,6 +516,9 @@ body {
     background-color: var(--primery-bg-logo-color);
     align-items: center;
     justify-content: center;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .social-icon {
@@ -524,6 +566,10 @@ body {
     color: var(--customers-color);
     border: 1px solid var(--customers-color);
     border-radius: 4px;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
 }
 
 .customers-item {
@@ -619,6 +665,10 @@ body {
     height: 40px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
 }
 
 .footer-social-link:hover,
@@ -639,7 +689,6 @@ body {
 .site-nav {
     display: flex;
 }
-
 
 
 /* < !-- Герой hero -->*/
@@ -677,6 +726,7 @@ body {
     text-align: center;
     border: 1px solid var(--secondary-color);
 
+    transition: opacity 250ms, visibility 250ms, cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -689,41 +739,51 @@ body {
 
 /* < !-- Преимущества advantages-->*/
 
-
-
-
-
 .advantages-container-portfolio {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 120px;
-
 }
 
-.advantages-item-portfolio:nth-child(3n) {
-    margin-right: 0;
+.advantages-list-portfolio {
+
+    width: 100%;
+    height: 100%;
 }
 
 .advantages-list-portfolio:nth-last-child(-n + 3) {
     margin-bottom: 0;
 }
 
-
+.advantages-item-portfolio:nth-child(3n) {
+    margin-right: 0;
+}
 
 .advantages-item-portfolio {
     width: 360px;
     margin-right: 24px;
     margin-bottom: 48px;
+}
 
+.advantages-item-portfolio:nth-last-child(-n + 3) {
+    margin-bottom: 0;
 }
 
 .advantages-link-portfolio {
     display: block;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .advantages-link-portfolio:hover,
 .advantages-link-portfolio:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.advantages-item-portfolio .imag {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .heading-box-portfolio {
@@ -735,16 +795,9 @@ body {
     border-bottom: 1px solid var(--secondary-color);
     border-left: 1px solid var(--secondary-color);
     border-right: 1px solid var(--secondary-color);
-
-
-}
-
-.advantages-item-portfolio:nth-last-child(-n + 3) {
-    margin-bottom: 0;
 }
 
 .advantages-list-portfolio .title {
-
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 500;
@@ -754,25 +807,54 @@ body {
 }
 
 .advantages-list-portfolio .text {
-
     margin-top: 8px;
     margin-bottom: 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-
-}
-
-.advantages-item-portfolio .imag {
-    display: block;
-    max-width: 100%;
-    height: auto;
-
-
 }
 
 
+/* оверлей */
+.advantages-thumb-portfolio {
+    position: relative;
+    width: 360px;
+    height: 300px;
+
+    overflow: hidden;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.advantages-overlay-portfolio {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    padding-top: 40px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    opacity: 0;
+
+    background-color: #4D5AE5;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: #F4F4FD;
+
+}
+
+.advantages-link-portfolio:is(:hover, :focus) .advantages-overlay-portfolio {
+    transform: translateY(0);
+    opacity: 1;
+}
 
 
 /* < !-- Футер futer --> */

@@ -50,11 +50,15 @@
         <!-- Герой     hero  -->
 
         <section class="hero-section">
-            <div class="overlay">
+            <div class="hero-overlay ">
                 <h1 class="hero-title">Effective Solutions for Your Business</h1>
-                <button type="button" class="button pointer">Order Service</button>
-                <div class="backdrop">
-                    <div class="modal"></div>
+                <button data-modal-open type="button" class="hero-button pointer">Order Service</button>
+                <div class="hero-modal is-hidden" data-modal>
+                    <button data-modal-close type="button" class="hero-button-modal">
+                        <svg class="hero-svg-button-close" width="8" height="8">
+                            <use href="./images/icon-sprite/symbol-defs.svg#close-modal"></use>
+                        </svg>
+                    </button>
                 </div>
             </div>
 
@@ -366,9 +370,8 @@
             </div>
 
         </div>
-
-
     </footer>
+    <script src="./js/modal.js"></script>
 </body>
 
 
