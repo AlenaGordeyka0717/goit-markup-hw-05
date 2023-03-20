@@ -118,17 +118,15 @@ body {
     text-decoration: none;
     line-height: 1.5;
 
-    transition-property: backraund-color;
+    transition-property: color;
     transition-duration: 250ms;
-    transition-timing-function: linear;
-
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav-link:hover,
 .site-nav-link:focus {
     color: var(--hov-foc-color);
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    ;
+
 }
 
 .site-nav-link .current {
@@ -153,14 +151,13 @@ body {
 
 .adress-list {
     display: flex;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 250ms;
+    transition-delay: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-list .link:hover,
 .adress-list .link:focus {
     color: var(--hov-foc-color);
-
-
 }
 
 .adress-list .link {
@@ -177,7 +174,9 @@ body {
     text-decoration: none;
     letter-spacing: 0.02em;
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .adress-list .item+.item {
@@ -215,7 +214,9 @@ body {
     font-size: 16px;
     letter-spacing: 0.04em;
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -228,9 +229,7 @@ body {
     cursor: pointer;
 }
 
-/* Модадьное окно */
 .hero-overlay {
-    position: relative;
     padding-top: 188px;
     padding-bottom: 188px;
     text-align: center;
@@ -247,58 +246,6 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
-
-.hero-modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 408px;
-    height: 516px;
-
-
-    background: #FCFCFC;
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-}
-
-.hero-modal.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.hero-button-modal {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    height: 24px;
-    width: 24px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: var(--secondary-color);
-    color: #000;
-
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-
-.hero-button-modal:hover,
-.hero-button-modal:focus {
-    color: var(--accent-color);
-    ;
-    background-color: var(--hov-foc-color);
-
-}
-
-.hero-svg-button-close {
-    fill: currentColor;
 }
 
 /*< !-- Преимущества      advantages -->*/
@@ -503,7 +450,6 @@ body {
     justify-content: center;
     gap: 24px;
     margin-top: 8px;
-
 }
 
 .social-item {
@@ -520,8 +466,14 @@ body {
     align-items: center;
     justify-content: center;
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--hov-foc-color);
 }
 
 .social-icon {
@@ -529,10 +481,7 @@ body {
     height: 16px;
 }
 
-.social-link:hover,
-.social-link:focus {
-    background-color: var(--hov-foc-color);
-}
+
 
 .customers-section {
     padding-top: 120px;
@@ -570,9 +519,15 @@ body {
     border: 1px solid var(--customers-color);
     border-radius: 4px;
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: color, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-
+.customers-link:hover,
+.customers-link:focus {
+    color: var(--hov-foc-color);
+    border-color: var(--hov-foc-color);
 }
 
 .customers-item {
@@ -586,15 +541,6 @@ body {
 
     fill: currentColor;
 }
-
-.customers-link:hover,
-.customers-link:focus {
-    color: var(--hov-foc-color);
-    border-color: var(--hov-foc-color);
-}
-
-
-
 
 
 
@@ -667,7 +613,9 @@ body {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-link:hover,
@@ -680,6 +628,65 @@ body {
     height: 16px;
 }
 
+/* модальное окно */
+.hero-backdrop-modal {
+    position: fixed;
+    top: 0;
+    width: 1440px;
+    height: 677px;
+    background: rgba(46, 47, 66, 0.4);
+}
+
+.hero-backdrop-modal.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 408px;
+    height: 516px;
+
+    background: #FCFCFC;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.hero-button-modal {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    height: 24px;
+    width: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: #000;
+
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button-modal:hover,
+.hero-button-modal:focus {
+    color: var(--accent-color);
+    background-color: var(--hov-foc-color);
+}
+
+.hero-svg-button-close {
+    fill: currentColor;
+}
 
 /* СТИЛИ Portfolio portfolio.html */
 
@@ -725,7 +732,11 @@ body {
     text-align: center;
     border: 1px solid var(--secondary-color);
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-color: transparent;
+
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -771,7 +782,9 @@ body {
 .advantages-link-portfolio {
     display: block;
 
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .advantages-link-portfolio:hover,
@@ -863,8 +876,6 @@ body {
     background-color: var(--primery-text-color);
     padding-top: 100px;
     padding-bottom: 100px;
-
-
 }
 
 .footer-section {
@@ -891,6 +902,4 @@ body {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.03em;
-
-
 }
