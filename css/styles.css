@@ -37,6 +37,12 @@ body {
     font-size: 16px;
 }
 
+/*  */
+textarea {
+
+    resize: none;
+}
+
 /* Утилиты */
 
 .list {
@@ -659,6 +665,7 @@ body {
     border-radius: 4px;
 }
 
+
 .hero-button-modal {
     position: absolute;
     top: 24px;
@@ -690,6 +697,86 @@ body {
 .hero-svg-button-close {
     fill: currentColor;
 }
+
+/* модальное окно feedback */
+.feedback-container {
+
+    padding-top: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+}
+
+.feedback-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: var(--primery-text-color);
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.feedback-form {
+    width: 100%;
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    border: 1px solid var(--primery-bg-logo-color);
+    border-radius: 4px;
+
+    outline: 2px solid red;
+}
+
+.feedback-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    outline: 1px solid blue;
+}
+
+.feedback-field input {
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 360px;
+    height: 40px;
+    left: 0px;
+    top: 84px;
+
+    opacity: 0.2;
+    border: 1px solid #2E2F42;
+    border-radius: 4px;
+
+}
+
+.feedback-field input::placeholder {
+    /* стили в инпуте */
+}
+
+.feedback-field label {
+    margin-bottom: 4px;
+}
+
+.feedback-text {
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    letter-spacing: 0.01em;
+    color: #8E8F99;
+}
+
+.feedback-checkbox {}
 
 /* СТИЛИ Portfolio portfolio.html */
 
